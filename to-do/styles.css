@@ -1,0 +1,150 @@
+@keyframes neonAnimation {
+    0% {
+        text-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+    }
+    20% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+    }
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 2.5rem;
+    text-align: center;
+    animation: neonAnimation 2s ease-in-out infinite alternate;
+}
+
+form,
+.todo-container {
+    display: flex;
+    flex = 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    min-width: 50%;
+    list-style: none;
+}
+
+.todo {
+  display: flex;
+  flex = 1;
+    margin: 0.5rem;
+    padding-left: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 1rem;
+
+    text-shadow: 0 0 10px #ff0000;
+}
+.textbox {
+  height: auto;
+}
+
+.todo li {
+    flex: 1;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.trash-btn,
+.complete-btn {
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-shadow: none;
+    display: flex;
+    flex = 1;
+}
+
+.complete-btn {
+  display: flex;
+  flex = 1;
+    background: #ff0000;
+}
+
+.trash-btn {
+    border-top-right-radius: 1.75rem;
+    border-bottom-right-radius: 1.75rem;
+    background: #ababab;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.fa-trash,
+.fa-check-circle {
+    pointer-events: none;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.completed {
+    text-decoration: line-through;
+    display: flex;
+    flex = 1;
+    opacity: 0.5;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.slide {
+    transform: translateX(10rem);
+    display: flex;
+    flex = 1;
+    opacity: 0;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    flex = 1;
+    outline: none;
+    border: none;
+    color: #ff0000;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 0.5rem; /* Adjust the padding as per your preference */
+    font-size: 1rem; /* Adjust the font size as per your preference */
+}
+
+.select::after {
+  display: flex;
+  flex = 1;
+    content: "\25BC";
+    position: absolute;
+    background: #ff0000;
+    top: 0;
+    right: 0;
+    padding: 1rem; /* Adjust the padding as per your preference */
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover::after {
+
+  display: flex;
+  flex = 1;
+    background: white;
+    color: #ff0000;
+}
