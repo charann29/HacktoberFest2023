@@ -6,7 +6,7 @@ This repository is to help Open Source beginners to make their first PR.
 ![HacktoberFest 2023](https://github.com/ossamamehmood/Hacktoberfest2023/raw/main/.github/logo.png)
 
 #Here is the ToDo web app
-https://krishprav.github.io/To-Do-List-/
+[https://krishprav.github.io/Todo/](https://krishprav.github.io/Todo/)
 
 ## This Project Is Perfect For Your First Pull Request
 
