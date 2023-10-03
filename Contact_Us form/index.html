@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bug Tracking</title>
+  <link
+    rel="stylesheet"
+    href="../../CSS/contactUs.css"
+  >
+  <link
+    rel="shortcut icon"
+    href="https://lh3.googleusercontent.com/pw/AIL4fc_nk1K4mU3hwvFotOnN1uwTUor9cqG5KoNGJ0xWms8dQcMEDYiqH1ylrpg2JKu1vuy0AyvvowK-IO7ELxaFrbRHfg2uKGAmtuZaKF_AUTk11ztOWhwlzrMDalHj5Vita6vfcMWn7X6pmUkWx32T5JAtZbhmXPPDFu--rC-o7WL7edGX_eNouad8I2h2c_6aWpBjCAdSs39vtvJFBXA7AuhYYEbXegFb73PzJ8a8tiyvMBDEYQWDzm6okXCLxLdXhjpHOCrElCl4EoTs6atrPvEnMLm7wla0DieGgvWIQFMpTwZQXm1yUpuq284jmPf9a9UpUnOX89EZ7OAQCuZeFVFskQsqMxdokDGq63ES4DkpG8KSEm9Rx8ZLoNdGNPmKaGw-o1k2EwAdCS2LzYQWUcIMCuzNyYCoNG6mnyxjXzgqG2KNwTz-5qxsff1m1EpELxuveIswNMZZ168ZgZT4FiU712c8i0U-X0-kqvjOqC5pdMVTsIHHkv5_SMGwHsjCE3MpG1CcfaErcQV2kp0tjqCUvCLLncdLSu0jzOev5IB8xfdvLIhQ-SK2IA69T2vSzbrJAFlxNxvhTEFl-pnJb2TydUx-FeX_piyHbBeJdD4ScKyZmUG9aRFS4eieGiPGW8V0TANx-zLjH5jBd4D2w7MsyyTUNql1l-xqZMVF3DfvufWkMyzRn5AKeiP_mKYNCH65dnzpS1UMduM7NitKrWAO1K1OB56inzWWR3OBHDfjk2VjKH97V1tIMfPnoC3whgErK8N666Am5_As1r7jO1iYBAIBmLt7a2D-UdwEJUNoH7u5jYVVeQhRvnKgUpZGzF73xnhxYCDCE7ch6EtwENlix4GzsqDRvBAqLnK4RIR-RU0BGS7CTOGxTKQ3ZEcBi0w67VQpcoII8ewnaIstmkNb9yOByspseTJ8UHoCGmrZxvU6W205r1owOb1iPe9kvnd18cJBcrDpW5WB8Rj445lVTmgf=w190-h182-s-no?authuser=0"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: url('bg.jpg') no-repeat top center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 550px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .wrapper .title h1 {
+      color: #c5ecfd;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-form {
+      display: flex;
+    }
+
+    .input-fields {
+      display: flex;
+      flex-direction: column;
+      margin-right: 4%;
+    }
+
+    .input-fields,
+    .msg {
+      width: 50%;
+    }
+
+    .input-fields .input,
+    .msg textarea {
+      margin: 5px 0;
+      background: transparent;
+      border: 0px;
+      border-bottom: 2px solid #c5ecfd;
+      padding: 5px;
+      color: #c5ecfd;
+      width: 100%;
+    }
+
+    .msg textarea {
+      height: 172px;
+    }
+
+    ::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #c5ecfd;
+    }
+
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #c5ecfd;
+    }
+
+    :-ms-input-placeholder {
+      /* IE 10+ */
+      color: #c5ecfd;
+    }
+
+    .btn {
+      background: #39b7dd;
+      text-align: center;
+      padding: 15px;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-right: 280px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .contact-form {
+        flex-direction: column;
+      }
+
+      .msg textarea {
+        height: 80px;
+      }
+
+      .input-fields,
+      .msg {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title">
+      <h1>Contact Us</h1>
+    </div>
+    <form>
+      <div class="contact-form">
+        <div class="input-fields">
+          <input
+            type="text"
+            class="input"
+            id="Name"
+            placeholder="Name"
+            name="Name"
+            required
+          >
+          <input
+            type="email"
+            class="input"
+            id="Email"
+            placeholder="Email Address"
+            name="Email"
+            required
+          >
+          <input
+            type="number"
+            class="input"
+            id="Phone"
+            placeholder="Phone Number"
+            name="Phone"
+            required
+            minlength="10"
+            maxlength="10"
+          >
+          <div
+            id="valid1"
+            class="text-danger"
+          ></div>
+          <input
+            type="text"
+            class="input"
+            id="Subject"
+            placeholder="Subject"
+            name="Subject"
+            required
+            minlength="5"
+            maxlength="20"
+          >
+        </div>
+        <div class="msg">
+          <textarea
+            placeholder="Message"
+            id="Message"
+            name="Message"
+            cols="100"
+            maxlength="50"
+          ></textarea>
+          <br>
+          <br>
+          <button
+            class="btn btn-light"
+            onclick="send();"
+          >Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    function send() {
+      let phone = document.getElementById('Phone').value
+      if (phone.length != 10) {
+        let phone_iavalid = document.getElementById('valid1').innerHTML = 'Phone Number length must be equal to 10.'
+      }
+    }
+  </script>
+</body>
+
+</html>
