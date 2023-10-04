@@ -1,0 +1,88 @@
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  transform: scale(1.1);
+}
+
+section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+    
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  max-width: 1000px;
+  max-height: 400px;
+  gap: 20px;
+}
+
+.carousel.sliding-transition {
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.arrow-button {
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  cursor: pointer;
+  background: rgb(255, 255, 255, 0.3);
+  width: 36px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  -webkit-box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.5);
+}
+
+span {
+  height: 100%;
+  width: 100%;
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
