@@ -47,3 +47,22 @@ const changeDirection = d => {
         speedY = 0;
     }
 };
+
+// Calling changeDirection on each key click and passing key dataset value as an object
+controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
+const initGame = () => {
+    if(gameOver) return handleGameOver();
+    let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
+    // Checking if the snake hit the food
+    if(snakeX === foodX && snakeY === foodY) {
+        updateFoodPosition();
+        snakeBody.push([foodY, foodX]); // Pushing food position to snake body array
+        score++; // increment score by 1
+        highScore = score >= highScore ? score : highScore;
+        localStorage.setItem("high-score", highScore);
+        scoreElement.innerText = `Score: ${score}`;
+        highScoreElement.innerText = `High Score: ${highScore}`;
+    }
+    // Updating the snake's head position based on the current velocity
+    snakeX += velocityX;
+    snakeY += velocityY;
