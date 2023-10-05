@@ -11,6 +11,9 @@ This repository is to help Open Source beginners to make their first PR.
 #Here is the Infinite Image Slider 
 [https://devmusiczz.github.io/ImageSlider/](https://devmusiczz.github.io/ImageSlider/)
 
+#Check out the calculator here
+[https://akashkmathew.github.io/simple_calculator/] (https://akashkmathew.github.io/simple_calculator/)
+
 ## This Project Is Perfect For Your First Pull Request
 
 🗣 **Hacktoberfest encourages participation in the open-source community, which grows bigger every year. Complete the challenge and get a tree planted on your name showing your love towards mother Earth 🌍**
