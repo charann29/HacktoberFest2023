@@ -18,6 +18,7 @@ body {
 }
 
 .header {
+  background-color: #212529;
   padding: 0 4.8rem;
   height: 10rem;
   display: flex;
@@ -33,6 +34,10 @@ body {
 .navbar-list {
   display: flex;
   gap: 4.8rem;
+  margin: auto;
+  backdrop-filter: blur(20px);
+  align-items: center;
+  justify-content: center;
   list-style: none;
 }
 
@@ -42,20 +47,34 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   font-size: 2rem;
+  justify-content: center;
+  align-items: center;
   font-weight: 500;
   color: #212529;
+  margin: auto;
   transition: all 0.3s;
 }
 
 .navbar-link:hover,
 .navbar-link:active {
-  color: #364fc7;
+  color: #9eaffc;
+  background-color: #212529;
+  padding: 10px 10px;
+  border-radius: 20px;
 }
 
 .mobile-navbar-btn {
   display: none;
   background: transparent;
   cursor: pointer;
+}
+.mobile-navbar-btn:hover{
+  transition: .5s;
+  background-color: aqua;
+}
+.mobile-navbar-btn::shadow{
+  box-shadow: #212529;
+  scroll-behavior: smooth;
 }
 
 .mobile-nav-icon {
