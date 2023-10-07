@@ -1,68 +1,107 @@
-const gameBoard = document.querySelector(".game-board");
-const scoreElement = document.querySelector(".score");
-const highScoreElement = document.querySelector(".high-score");
-const controls = document.querySelectorAll(".controls i");
 
-let gameOver = false;
-let targetX, targetY;
-let snakeX = 5, snakeY = 5;
-let speedX = 0, speedY = 0;
-let snakeBody = [];
-let setIntervalId;
-let score = 0;
 
-// Get high score from localStorage API or set to 0 if not available
-let highScore = localStorage.getItem("high-score") || 0;
-highScoreElement.innerText = `High Score: ${highScore}`;
+//game board
+var blockSize=25;
+var rows=20;
+var cls=20;
+var board;
+var context;
 
-// Function to update the position of the target (food)
-const updateTargetPosition = () => {
-    // Random positions (x, y) generated for target
-    // x, y values range from 1 to 30 since it's a 30x30 grid
-    targetX = Math.floor(Math.random() * 30) + 1;
-    targetY = Math.floor(Math.random() * 30) + 1;
-};
+//snake head
+var snakeX = blockSize * 5;
+var snakeY = blockSize * 5;
 
-// Function to handle game over condition
-const handleGameOver = () => {
-    // Clear the interval, show alert, and reload the page
-    clearInterval(setIntervalId);
-    alert("Game Over! Press OK to replay");
-    location.reload();
-};
+//snake speed
+var speedX = 0;
+var speedY = 0;
 
-// Function to change the direction of the snake based on the key pressed
-const changeDirection = d => {
-    if (d.key === "ArrowUp" && speedY !== 1) {
+var snakeBody = [];
+
+//target 
+var targetX;
+var targetY;
+
+var gameOver = false;
+
+window.onload = function() {
+    board=document.getElementById("board");
+    board.height = rows * blockSize;
+    board.width = cls * blockSize;
+    context = board.getContext("2d"); // to draw on the board
+
+    placeTarget();
+    document.addEventListener("keyup", changeDirection);
+    //update();
+    setInterval(update, 1000/10); // every 100 milliseconds it's going to run the update function
+}
+
+function update() {
+    if(gameOver) {
+        return;
+    }
+    context.fillStyle="yellow";
+    context.fillRect(0,0,board.width,board.height);
+
+    context.fillStyle="green";
+    context.fillRect(targetX, targetY, blockSize, blockSize);
+
+    if(snakeX == targetX && snakeY == targetY) {
+        snakeBody.push([targetX,targetY])
+        placeTarget();
+    }
+
+    for(let i = snakeBody.length-1;i>0;i--) {
+        snakeBody[i]=snakeBody[i-1];
+    }
+    if(snakeBody.length) {
+        snakeBody[0] = [snakeX, snakeY];
+    }
+
+    context.fillStyle="red";
+    snakeX += speedX*blockSize;
+    snakeY += speedY*blockSize;
+    context.fillRect(snakeX, snakeY, blockSize, blockSize);
+    for(let i = 0;i<snakeBody.length;i++)
+    {
+        context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize,blockSize);
+    }
+    
+    //game over conditions
+    if(snakeX<0 || snakeX>cls*blockSize || snakeY<0 || snakeY > rows*blockSize) {
+        gameOver = true;
+        alert("game over");
+    }
+
+    for(let i = 0;i<snakeBody.length;i++)
+    {
+        if(snakeX==snakeBody[i][0] && snakeY == snakeBody[i][1]) {
+            gameOver = true;
+            alert("game over");
+        }
+    }
+}
+
+function changeDirection(e) {
+    if(e.code=="ArrowUp" && speedY!=1) {
         speedX = 0;
         speedY = -1;
-    } else if (d.key === "ArrowDown" && speedY !== -1) {
+    }
+    else if(e.code=="ArrowDown" && speedY!=-1) {
         speedX = 0;
         speedY = 1;
-    } else if (d.key === "ArrowLeft" && speedX !== 1) {
+    }
+    else if (e.code=="ArrowLeft" && speedX!=1) {
         speedX = -1;
         speedY = 0;
-    } else if (d.key === "ArrowRight" && speedX !== -1) {
+    }
+    else if (e.code=="ArrowRight" && speedX!=-1) {
         speedX = 1;
         speedY = 0;
     }
-};
+}
 
-// Calling changeDirection on each key click and passing key dataset value as an object
-controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
-const initGame = () => {
-    if(gameOver) return handleGameOver();
-    let html = `<div class="food" style="grid-area: ${foodY} / ${foodX}"></div>`;
-    // Checking if the snake hit the food
-    if(snakeX === foodX && snakeY === foodY) {
-        updateFoodPosition();
-        snakeBody.push([foodY, foodX]); // Pushing food position to snake body array
-        score++; // increment score by 1
-        highScore = score >= highScore ? score : highScore;
-        localStorage.setItem("high-score", highScore);
-        scoreElement.innerText = `Score: ${score}`;
-        highScoreElement.innerText = `High Score: ${highScore}`;
-    }
-    // Updating the snake's head position based on the current velocity
-    snakeX += velocityX;
-    snakeY += velocityY;
+function placeTarget() {
+
+    targetX = Math.floor(Math.random() * cls) * blockSize;
+    targetY = Math.floor(Math.random() * rows) * blockSize;
+}
