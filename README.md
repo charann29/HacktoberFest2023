@@ -5,7 +5,14 @@ This repository is to help Open Source beginners to make their first PR.
 # HacktoberFest 2023 `OPEN FIRST` Pull Request
 ![HacktoberFest 2023](https://github.com/ossamamehmood/Hacktoberfest2023/raw/main/.github/logo.png)
 
+#Here is the ToDo web app
+[https://krishprav.github.io/Todo/](https://krishprav.github.io/Todo/)
 
+#Here is the Infinite Image Slider 
+[https://devmusiczz.github.io/ImageSlider/](https://devmusiczz.github.io/ImageSlider/)
+
+#Check out the calculator here
+[https://akashkmathew.github.io/simple_calculator/] (https://akashkmathew.github.io/simple_calculator/)
 
 ## This Project Is Perfect For Your First Pull Request
 
@@ -136,6 +143,3 @@ To get approval of the pull request much quicker and faster (`Follow Me`)🚀
 '''
 ```
 
-<tr><td align="center"><a href="https://github.com/ossamamehmood"><kbd><img src="https://avatars3.githubusercontent.com/ossamamehmood?size=100" width="100px;" alt=""/></kbd><br /><sub><b>Ossama Mehmood</b></sub></a><br /></td>
-
-</tr>
