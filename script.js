@@ -11,6 +11,9 @@ var context;
 var snakeX = blockSize * 5;
 var snakeY = blockSize * 5;
 
+var score = 0;
+var highScore = localStorage.getItem("highscore") || 0;
+
 //snake speed
 var speedX = 0;
 var speedY = 0;
@@ -39,13 +42,18 @@ function update() {
     if(gameOver) {
         return;
     }
-    context.fillStyle="yellow";
+    context.fillStyle="grey";
     context.fillRect(0,0,board.width,board.height);
 
-    context.fillStyle="green";
+    context.fillStyle="black";
     context.fillRect(targetX, targetY, blockSize, blockSize);
 
     if(snakeX == targetX && snakeY == targetY) {
+        score+=1;
+        if(score>highScore) {
+            highScore=score;  //update highScore
+            localStorage.setItem("highscore", highScore);
+        }
         snakeBody.push([targetX,targetY])
         placeTarget();
     }
@@ -57,7 +65,7 @@ function update() {
         snakeBody[0] = [snakeX, snakeY];
     }
 
-    context.fillStyle="red";
+    context.fillStyle="pink";
     snakeX += speedX*blockSize;
     snakeY += speedY*blockSize;
     context.fillRect(snakeX, snakeY, blockSize, blockSize);
@@ -79,6 +87,9 @@ function update() {
             alert("game over");
         }
     }
+
+    document.getElementById("score").textContent= score;
+    document.getElementById("highscore").textContent=highScore;
 }
 
 function changeDirection(e) {
