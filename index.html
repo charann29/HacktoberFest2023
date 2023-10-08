@@ -3,12 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport", content="width=device-width, initial-scale=1.0">
-        <title>Snakegame</title>
+        <title>Cobra Craft</title>
         <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>Snake Game</h1>
-        <canvas id="board"></canvas>
+    <div class="title">
+            <h1>Cobra Craft</h1>
+        <div class="container">
+            <div id="score-container">
+                <span class="score-label">Score : <span class="score-label"><span id="score">0</span></span>
+                <span class="highscore-label">High Score: <span id="highscore">0</span></span>
+            </div>
+            <canvas id="board"></canvas>
+        </div>
+    </div>
     </body>
 </html>
