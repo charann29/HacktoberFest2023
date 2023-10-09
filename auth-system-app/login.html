@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>
+      User Authentication System — Hacktoberfest 2023 | Pantelis Theodosiou
+    </title>
+    <meta
+      name="title"
+      content="User Authentication System — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      name="description"
+      content="An authentication mechanism system in plain JavaScript is a software component or set of functions that verifies the identity of users trying to access a system or application. It typically involves user input, such as usernames and passwords, and uses JavaScript code to validate this information against stored credentials or an authentication server. This system ensures that only authorized users can access the protected resources or features of the application."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta
+      property="og:title"
+      content="User Authentication System — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      property="og:description"
+      content="An authentication mechanism system in plain JavaScript is a software component or set of functions that verifies the identity of users trying to access a system or application. It typically involves user input, such as usernames and passwords, and uses JavaScript code to validate this information against stored credentials or an authentication server. This system ensures that only authorized users can access the protected resources or features of the application."
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta
+      property="twitter:title"
+      content="User Authentication System — Hacktoberfest 2023 | Pantelis Theodosiou"
+    />
+    <meta
+      property="twitter:description"
+      content="An authentication mechanism system in plain JavaScript is a software component or set of functions that verifies the identity of users trying to access a system or application. It typically involves user input, such as usernames and passwords, and uses JavaScript code to validate this information against stored credentials or an authentication server. This system ensures that only authorized users can access the protected resources or features of the application."
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/images/meta-tags.png"
+    />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="antialiased text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900"
+  >
+    <section class="bg-gray-50 dark:bg-gray-900">
+      <div
+        class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+      >
+        <a
+          href="https://hacktoberfest.com/"
+          target="_blank"
+          class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+        >
+          <img
+            class="w-14 h-14 mr-2 rounded-full"
+            src="https://hacktoberfest.com/_next/static/media/logo-hacktoberfest--logomark.b91c17d2.svg"
+            alt="Hacktoberfest 2023 - Logo"
+          />
+          Hacktoberfest 2023
+        </a>
+        <div
+          class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <h1
+              class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+            >
+              Sign in to your account
+            </h1>
+            <form class="space-y-4 md:space-y-6">
+              <!-- Username -->
+              <div>
+                <label
+                  for="username"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="ptheodosiou"
+                  required
+                />
+              </div>
+
+              <!-- Password -->
+              <div>
+                <label
+                  for="password"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="••••••••"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required
+                />
+              </div>
+
+              <!-- Error message -->
+              <div
+                class="block mb-2 text-sm font-medium text-red-900 dark:text-white hidden"
+                id="error-msg"
+              ></div>
+
+              <!-- Submit form button -->
+              <button
+                id="login-btn"
+                type="submit"
+                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              >
+                Sign in
+              </button>
+              <p
+                class="text-sm text-center font-light text-gray-500 dark:text-gray-400"
+              >
+                Don’t have an account yet?
+                <a
+                  href="/register.html"
+                  class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  >Sign up</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-0 w-full bg-gray-100 dark:bg-gray-900">
+      <div class="container py-2 mx-auto">
+        <p class="text-center">
+          &copy; 2023 Developed with &#9829; by
+          <a
+            href="https://pantelis.theodosiou.me/"
+            class="font-semibold hover:underline"
+            target="_blank"
+            >Pantelis Theodosiou</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="src/js/login.page.js"></script>
+  </body>
+</html>
