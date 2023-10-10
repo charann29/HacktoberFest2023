@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class feereport {
+public class FeeReport {
     private static final int NUM_STUDENTS = 5;
     private static final double TUITION_FEE = 1000.0;
 
@@ -25,6 +25,12 @@ public class feereport {
         }
 
         // Output fee report
+        printFeeReport(names, feesPaid, feesDue, totalFeesPaid, totalFeesDue);
+        scanner.close();
+    }
+
+    private static void printFeeReport(String[] names, double[] feesPaid, double[] feesDue,
+                                       double totalFeesPaid, double totalFeesDue) {
         System.out.println("Fee Report");
         System.out.println("-----------");
         System.out.println("Name\t\tFees Paid\tFees Due");
@@ -33,5 +39,5 @@ public class feereport {
         }
         System.out.println("-----------");
         System.out.printf("Total\t\t$%.2f\t\t$%.2f\n", totalFeesPaid, totalFeesDue);
-        scanner.close();
     }
+}

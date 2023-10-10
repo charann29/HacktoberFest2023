@@ -1,34 +1,39 @@
-function Calculate(){
-    var num1 = document.getElementsByName("num1")[0].value;
-    var num2 = document.getElementsByName("num2")[0].value;
-    var operator = document.getElementsByName("operator")[0].value;
-    var ans = document.getElementsByName("ans")[0];
-    var msg = document.getElementById("msg");
-    if(msg.style.display == "block"){
-        msg.style.display = "none";
-    }
-    if(num1 == "" || num2 == ""){
-        msg.innerHTML = "Please enter both the numbers";
+function calculate() {
+    const num1 = parseFloat(document.getElementsByName("num1")[0].value);
+    const num2 = parseFloat(document.getElementsByName("num2")[0].value);
+    const operator = document.getElementsByName("operator")[0].value;
+    const ans = document.getElementsByName("ans")[0];
+    const msg = document.getElementById("msg");
+
+    // Reset error message
+    msg.style.display = "none";
+
+    if (isNaN(num1) || isNaN(num2)) {
+        msg.innerHTML = "Please enter valid numbers";
         msg.style.display = "block";
-        return;
-    }
-    num1 = parseFloat(num1);
-    num2 = parseFloat(num2);
-    if(operator == "add"){
-        ans.value = num1 + num2;
-    }
-    else if(operator == "sub"){
-        ans.value = num1 - num2;
-    }
-    else if(operator == "mul"){
-        ans.value = num1 * num2;
-    }
-    else if(operator == "div"){
-        ans.value = num1 / num2;
-    }
-    else if(operator == "op"){
-        msg.innerHTML = "Please select an operator";
-        msg.style.display = "block";
-        return;
+    } else {
+        switch (operator) {
+            case "add":
+                ans.value = num1 + num2;
+                break;
+            case "sub":
+                ans.value = num1 - num2;
+                break;
+            case "mul":
+                ans.value = num1 * num2;
+                break;
+            case "div":
+                if (num2 === 0) {
+                    msg.innerHTML = "Division by zero is not allowed";
+                    msg.style.display = "block";
+                } else {
+                    ans.value = num1 / num2;
+                }
+                break;
+            default:
+                msg.innerHTML = "Please select a valid operator";
+                msg.style.display = "block";
+                break;
+        }
     }
 }
