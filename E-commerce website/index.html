@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>LeatherHoard</title>
+   <meta name="keywords" content="e-commerce, selling">
+   <meta name="description" content="An Open Source E-commerce website for selling products">
+   <meta name="author" content="Rahul Ch">
+   <!-- bootstrap css -->
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="logincss.css">
+   <link rel="stylesheet" href="css/theme.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- favicon -->
+   <link rel="icon" href="images/logo3.png" type="image/gif" />
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+   <!-- theme.js needs to be in the head -->
+   <script src="./js/theme.js" async></script>
+</head>
+<!-- body -->
+
+<body class="main-layout">
+   <button onclick="topFunction()" id="myBtn" title="Go to top">
+   <a href="#">top</a>
+   </button>
+   <!-- loader  -->
+   <div class="loader_bg">
+      <div class="loader-wrapper">
+         <div class="loader-circle"></div>
+         <div class="loader-circle"></div>
+         <div class="loader-circle"></div>
+         <div class="loader-shadow"></div>
+         <div class="loader-shadow"></div>
+         <div class="loader-shadow"></div>
+      </div>
+   </div>
+   <!-- end loader -->
+   <!-- header -->
+
+
+   <!-- Progress bar  -->
+   <div class="progressBar"></div>
+   
+   <header>
+      <!-- header inner -->
+      <div class="header" id="top-of-page">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-banner">
+                        <div class="logo">
+                           <a href="index.html"><img src="./images/logo3.png" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                  <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                        aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item active">
+                              <a class="nav-link" href="index.html">Home</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#about">About</a>
+                           </li>
+
+                           <li class="nav-item">
+                              <a class="nav-link" href="#Products">Products</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#ContactUs">Contact Us</a>
+                           </li>
+                           <li class="nav-item d_none" >
+                              <i class="fa fa-search nav-link" aria-hidden="true" id="search-button"></i>
+                              <div class="searchBox">
+                                 <div class="searchInputBox">
+                                    <input type="search" name="search" id="searchInput">
+                                 </div>
+                                 <div class="suggestionBox">
+                                    <div>this </div>
+                                    <div>that </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="nav-item d_none">
+                              <a class="nav-link" href="login.html">Login</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- end header inner -->
+   <!-- end header -->
+   <!-- banner -->
+   <section class="banner_main">
+      <div id="banner1" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+            <li data-target="#banner1" data-slide-to="0" class="active"></li>
+            <li data-target="#banner1" data-slide-to="1"></li>
+            <li data-target="#banner1" data-slide-to="2"></li>
+            <li data-target="#banner1" data-slide-to="3"></li>
+            <li data-target="#banner1" data-slide-to="4"></li>
+         </ol>
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="text-bg">
+                              <span>Explore the Finest Selection in Our</span>
+                              <h1>Exquisite Collection</h1>
+                              <p>Exceptional Quality and Style</p>
+                              <a href="#">Shop Now</a> <a href="#ContactUs">Contact </a>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="text_img">
+                              <figure class="banner-img"><img src="./images/ecom.png" alt="#" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="text-bg">
+                              <span>Explore the Finest Selection in Our</span>
+                              <h1>Exquisite Collection</h1>
+                              <p>Exceptional Quality and Style</p>
+                              <a href="#">Shop Now</a> <a href="#ContactUs">Contact </a>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="text_img">
+                              <figure class="banner-img"><img src="./images/ecom.png" alt="leather pieces" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="text-bg">
+                              <span>Explore the Finest Selection in Our</span>
+                              <h1>Exquisite Collection</h1>
+                              <p>Exceptional Quality and Style</p>
+                              <a href="#">Shop Now</a> <a href="#ContactUs">Contact </a>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="text_img">
+                              <figure class="banner-img"><img src="./images/ecom.png" alt="leather pieces" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="text-bg">
+                              <span>Explore the Finest Selection in Our</span>
+                              <h1>Exquisite Collection</h1>
+                              <p>Exceptional Quality and Style</p>
+                              <a href="#">Shop Now</a> <a href="#ContactUs">Contact </a>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="text_img">
+                              <figure class="banner-img"><img src="./images/ecom.png" alt="leather pieces" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="container">
+                  <div class="carousel-caption">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <div class="text-bg">
+                              <span>Explore the Finest Selection in Our</span>
+                              <h1>Exquisite Collection</h1>
+                              <p>Exceptional Quality and Style</p>
+                              <a href="#">Shop Now</a> <a href="#ContactUs">Contact </a>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="text_img">
+                              <figure class="banner-img"><img src="./images/ecom.png" alt="leather pieces" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#banner1" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+         </a>
+         <a class="carousel-control-next" href="#banner1" role="button" data-slide="next">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+         </a>
+      </div>
+   </section>
+   <!-- end banner -->
+
+   <!-- company quality services -->
+   <div class="page-section">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-4">
+               <div class="card-service wow fadeInUp">
+                  <div class="service_img">
+                     <img src="./images/quality1.png" alt="">
+                  </div>
+                  <div class="body">
+                     <h5 class="text-secondary">Providing Quality Item</h5>
+                     <p>Embrace Timeless Elegance and Quality 🌟. <br>
+                        In today's fashion landscape, quality is the trend.
+                        We're dedicated to delivering top-notch products that meet your expectations.
+                        Trust in our promise to provide value for your money. Shop now!</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="card-service wow fadeInUp">
+                  <div class="service_img">
+                     <img src="./images/quality2.png" alt="">
+                  </div>
+                  <div class="body">
+                     <h5 class="text-secondary">Customer Update</h5>
+                        <p>At E-COM, we're committed to enhancing your shopping experience.
+                           Need assistance? Contact us via email or phone.
+                           If an item is out of stock, our team will keep you informed about restocking dates.
+                           Your feedback matters. If you're satisfied or have concerns, reach out to us using the information below. We're here to serve you better.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4">
+               <div class="card-service wow fadeInUp">
+                  <div class="service_img">
+                     <img src="./images/quality3.png" alt="">
+                  </div>
+                  <div class="body">
+                     <h5 class="text-secondary">Personalized Items</h5>
+                     <p>At E-COM, we're leather product experts.
+                        📏 Need the perfect size? We've got you covered.
+                        💰 Looking for affordable alternatives to high street fashion? We'll find it.
+                        👔 Want something unique? Our bespoke, quality leather goods are tailored just for you.
+                        Trust us to fulfill your leather dreams!"</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> <!-- .container -->
+   </div> <!-- .page-section -->
+
+   <!-- products -->
+   <div class="page-section bg-light" id="Products">
+      <div class="container">
+         <div class="text-center wow fadeInUp">
+            <div class="subhead">Explore New Style</div>
+            <h2 class="title-section">Our Collections</h2>
+            <div class="divider mx-auto"></div>
+         </div>
+
+         <div class="row">
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-purse.png" alt="Leather purse">
+                  </figure>
+                  <h5>Ladies Fancy Purse</h5>
+                  <p>Buy good quality handbags for women including clutches, shoulder bags and cross body bags at
+                     affordable prices.</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/watches.png" alt="Leather belt">
+                  </figure>
+                  <h5>Men's watch</h5>
+                  <p>Elevate your wrist game with our stunning watch collection. From timeless classics to contemporary designs, our diverse range caters to every style and occasion. Discover precision timekeeping and impeccable craftsmanship in every watch</p>
+
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-shoes.png" alt="Leather shoes">
+                  </figure>
+                  <h5>Men's Formal Shoes</h5>
+                  <p>Shop best quality Men's Formal Shoes Online. Shop Men's Dress Shoes from a wide range of colours
+                     and styles, available exclusively at LeatherHoard.</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-bags.png" alt="Leather bags">
+                  </figure>
+                  <h5>Grainy Leather Briefcase</h5>
+                  <p>A briefcase is still a good investment piece, as these picks will suit anyone for any purpose, from
+                     internship to retirement party.
+                  </p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-wallet.jpeg" alt="Leather wallet">
+                  </figure>
+                  <h5>Men's Accessories</h5>
+                  <p>These genuine leather wallet mens styles have the traditional two-way fold and plenty of interior
+                     pockets and slots for your cash, cards and more.</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-gloves.jpeg" alt="Leather gloves">
+                  </figure>
+                  <h5>Classic Leather Gloves</h5>
+                  <p>A truly unique glove amongst the competition, giving you breathable Leather to keep hand dry and
+                     warm. </p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-bagpacks.png" alt="Leather bagpacks">
+                  </figure>
+                  <h5>School/College Bagpacks</h5>
+                  <p>Explore our range of leather backpacks for men & women bringing style, strength and multi purpose
+                     functionality at one place.</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3 py-3 wow zoomIn">
+               <div class="categories">
+                  <figure class="headimg">
+                     <img src="./images/Leather-caps.jpeg" alt="Leather caps">
+                  </figure>
+                  <h5>Pure Leather Caps</h5>
+                  <p>*Free Size · *Adjustable · *Trendy · *Polyester and Silk inside which keeps your head from heating
+                     up ·</p>
+               </div>
+            </div>
+            <div class="col-12">
+            </div>
+         </div>
+
+      </div> <!-- .container -->
+   </div>
+   <!-- end products -->
+
+
+   <!-- About us  section -->
+   <div class="page-section" id="about">
+      <div class="container">
+         <div class="row align-items-center">
+            <div class="col-lg-6 py-3 wow fadeInUp">
+               <span class="subhead">About us</span>
+               <h2 class="title-section">E-COM</h2>
+               <div class="divider"></div>
+
+               <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                  labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+               <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+            </div>
+            <div class="col-lg-6 py-3 wow fadeInRight">
+               <figure class="about-img py-3 text-center">
+                  <img src="./images/ecom.png" alt="">
+               </figure>
+            </div>
+         </div>
+      </div> <!-- .container -->
+   </div> <!-- .page-section -->
+   </div>
+   <!-- end About us  section -->
+
+   <!---offer-->
+   <div class="offer">
+      <div class="container">
+
+         <div class="row align-items-center">
+
+            <figure class="about-img col-lg-6 py-3 wow fadeInUp">
+               <img src="./images/offerhoodie.png" class="offer-img">
+            </figure>
+
+
+            <div  class="col-lg-6 py-3 wow fadeInRight">
+               <p class="offerp"> Exclusively Available on E-COM</p>
+               <h1>Stylish Hoodie</h1>
+               <br>
+               <p class="offerp"> It is one of the most common and most affordable. It is very tough and stiff at first, but as you wear the hoodie in, it will become softer and more supple.
+               </p>
+
+               <a href=""><button class="btn">Shop Now &#8594;</button>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="page-section" id="arrivals">
+      <div class="container">
+         <div class="text-center wow fadeInUp">
+            <div class="subhead">Find More Interesting Products</div>
+            <h2 class="title-section">Our New Arrivals</h2>
+            <div class="divider mx-auto"></div>
+         </div>
+
+         <div class="row mt-5">
+            <div class="col-lg-4 py-3 wow fadeInUp">
+               <div class="arrival-card">
+                  <div class="body">
+                     <figure class="arrival_picture">
+                        <img src="./images/arrival_1.jpg" alt="">
+                     </figure>
+                     <div class="bodycont">
+                        <h5 class="arrival-title"><a href="#">Handmade Bags For Women</a></h5>
+                        <div class="post-date">Price: <a href="#">Rs. 4000</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-4 py-3 wow fadeInUp">
+               <div class="arrival-card">
+                  <div class="body">
+                     <figure class="arrival_picture">
+                        <img src="./images/arrival_2.jpg" alt="">
+                     </figure>
+                     <div class="bodycont">
+                        <h5 class="arrival-title"><a href="#">Men's Casual Boots</a></h5>
+                        <div class="post-date">Price: <a href="#">Rs. 8000</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-4 py-3 wow fadeInUp">
+               <div class="arrival-card">
+                  <div class="body">
+                     <figure class="arrival_picture">
+                        <img src="./images/arrival_3.jpg" alt="">
+                     </figure>
+                     <div class="bodycont">
+                        <h5 class="arrival-title"><a href="#">Men's Vintage Chest Bag</a></h5>
+                        <div class="post-date">Price: <a href="#">Rs. 6000</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-12 mt-4 text-center wow fadeInUp">
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="customer">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage">
+                  <h2>Customer Reviews</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12">
+               <div id="myCarousel" class="carousel slide customer_Carousel " data-ride="carousel">
+                  <ol class="carousel-indicators">
+                     <li data-target="#myCarousel" data-slide-to="0" class="active next-circle"></li>
+                     <li data-target="#myCarousel" data-slide-to="1" class="next-circle"></li>
+                     <li data-target="#myCarousel" data-slide-to="2" class="next-circle"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="container">
+                           <div class="carousel-caption ">
+                              <div class="row">
+                                 <div class="col-md-9 offset-md-3">
+                                    <div class="test_box">
+                                       <i><img class="customer-review-quote" src="./images/cos.png" alt="#" /></i>
+                                       <h4>DAVID WIESE</h4>
+                                       <p>Hello, this is David from Brazil! I recently received my new backpack purse, and it's exactly what I've been searching for! I absolutely adore it and appreciate your fantastic products. Thank you so much, E-COM!</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                   
+                   
+                  </div>
+                  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="sr-only">Next</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end customer -->
+
+   <!--  contact -->
+   <section class="contact" id="ContactUs">
+      <div class="container">
+         <div class="contact-details">
+            <div class="section-header contact-head  text-center">
+               <div class="text-center wow fadeInUp">
+                  <h2 class="title-section">Contact Us</h2>
+               </div>
+               <p>
+
+                  If you have any questions about our product, please feel free to contact us on any of the below given links or send us an email.
+               <br> We would be glad to resolve your issues. 
+            </p>
+                 
+               </p>
+            </div>
+            <!--/.section-header-->
+            <div class="contact-content">
+               <div class="row">
+                  <div class="col-sm-offset-1 col-sm-5">
+                     <div class="single-contact-box">
+                        <div class="contact-right">
+                           <div class="contact-adress">
+                              <div class="contact-office-address">
+                                 <h3>contact info</h3>
+                                 <p>
+                                    123, Sunshine Lane
+                                    Mumbai, Maharashtra
+                                    India 400001                                 </p>
+                                 <div class="contact-online-address">
+                                    <div class="single-online-address">
+                                       <i class="fa fa-phone"></i>
+                                       +91 9922773824
+                                    </div>
+                                    <!--/.single-online-address-->
+
+                                    <div class="single-online-address">
+                                       <i class="fa fa-envelope-o"></i>
+                                       <span>ecom_official@gmail.com</span>
+                                    </div>
+                                    <!--/.single-online-address-->
+                                 </div>
+                                 <!--/.contact-online-address-->
+                              </div>
+                              <!--/.contact-office-address-->
+                              <div class="contact-office-address">
+                                 <h3>social partner</h3>
+                                 <div class="contact-icon">
+                                    <ul>
+                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                       <!--/li-->
+                                       <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                       <!--/li-->
+                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                       <!--/li-->
+                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                       <!--/li-->
+                                    </ul>
+                                    <!--/ul-->
+                                 </div>
+                                 <!--/.contact-icon-->
+                              </div>
+                              <!--/.contact-office-address-->
+
+                           </div>
+                           <!--/.contact-address-->
+                        </div>
+                        <!--/.contact-right-->
+                     </div>
+                     <!--/.single-contact-box-->
+                  </div>
+                  <!--/.col-->
+                  <div class="col-sm-5">
+                     <div class="single-contact-box">
+                        <div class="contact-form">
+                           <h3>Leave us a Message Here</h3>
+                           <form>
+                              <div class="row">
+                                 <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                       <input type="text" class="form-control" id="firstname" placeholder="First Name"
+                                          name="firstname">
+                                    </div>
+                                    <!--/.form-group-->
+                                 </div>
+                                 <!--/.col-->
+                                 <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                       <input type="text" class="form-control" id="lastname" placeholder="Last Name"
+                                          name="laststname">
+                                    </div>
+                                    <!--/.form-group-->
+                                 </div>
+                                 <!--/.col-->
+                              </div>
+                              <!--/.row-->
+                              <div class="row">
+                                 <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                       <input type="email" class="form-control" id="email" placeholder="Email"
+                                          name="email">
+                                    </div>
+                                    <!--/.form-group-->
+                                 </div>
+                                 <!--/.col-->
+                                 <div class="col-sm-6 col-xs-12">
+                                    <div class="form-group">
+                                       <input type="text" class="form-control" id="phone" placeholder="Phone"
+                                          name="phone">
+                                    </div>
+                                    <!--/.form-group-->
+                                 </div>
+                                 <!--/.col-->
+                              </div>
+                              <!--/.row-->
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <textarea class="form-control" rows="7" id="comment"
+                                          placeholder="Message"></textarea>
+                                    </div>
+                                    <!--/.form-group-->
+                                 </div>
+                                 <!--/.col-->
+                              </div>
+                              <!--/.row-->
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <div class="single-contact-btn ">
+                                       <button class="SubmitBtn" type="button">Send Message</button>
+                                       <button   class="ResetBtn" type="reset">Reset</button>
+                                    </div>
+                                    <!--/.single-single-contact-btn-->
+                                 </div>
+                                 <!--/.col-->
+                              </div>
+                              <!--/.row-->
+                           </form>
+                           <!--/form-->
+                        </div>
+                        <!--/.contact-form-->
+                     </div>
+                     <!--/.single-contact-box-->
+                  </div>
+                  <!--/.col-->
+               </div>
+               <!--/.row-->
+            </div>
+            <!--/.contact-content-->
+         </div>
+         <!--/.contact-details-->
+      </div>
+      <!--/.container-->
+
+   </section>
+   <!--/.contact-->
+   <!-- end contact -->
+   <!--  footer -->
+   <footer>
+      <div class="footer">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <a href="#top-of-page">
+                     <img class="logo1" src="./images/logo3.png" alt="#" />
+                  </a>
+                  <ul class="social_icon">
+                     <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                     <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>INFO</h3>
+                  <ul class="about_us">
+                     <li><a href="#">About Us</a></li>
+                     <li><a href="#">FAQs</a></li>
+                     <li><a href="#">Advertise</a></li>
+                     <li><a href="#">Terms and Conditions</a></li>
+                     <li><a href="PrivacyPolicy.html">Privacy Policy</a></li>
+                     <li><a href="#">Help & Support</a></li>
+                  </ul>
+               </div>
+
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <h3>Contact Us</h3>
+                  <ul class="conta">
+                     <li>
+                        <p>                           
+                           123, Sunshine Lane
+                           Mumbai, Maharashtra
+                           India 400001</p>
+                     </li>
+                     <li>+91 9922773824</li>
+                     <li>ecom_official@gmail.com</li>
+
+                  </ul>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                  <form class="bottom_form">
+                     <h3>Newsletter</h3>
+                     <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
+                     <button class="sub_btn">subscribe</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="copyright">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <p>Copyright © 2023 E-COM, Inc. All rights reserved.</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <div class="toggle-theme-btn">
+      <i class="fa fa-sun-o"></i>
+      <i class="fa fa-moon-o"></i>
+   </div>
+   <!-- end footer -->
+   <!-- Javascript files-->
+   <script src="./js/jquery.min.js"></script>
+   <script src="./js/bootstrap.bundle.min.js"></script>
+   <!-- sidebar -->
+
+   <script src="./js/custom.js"></script>
+
+   <!-- reiquired js for the page  -->
+   <script src="./js/searchSuggestions.js"> </script>
+   <script src="./js/index.js"></script>
+   <script src="./js/carousal.js"></script>
+
+</body>
+
+</html>
