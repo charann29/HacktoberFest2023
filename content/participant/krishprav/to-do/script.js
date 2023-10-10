@@ -13,145 +13,116 @@ filterOption.addEventListener("change", filterTodo);
 
 function addTodo(event) {
     event.preventDefault();
+    const todoText = todoInput.value.trim();
+    const deadlineText = deadlineInput.value.trim();
+
+    if (!todoText || !deadlineText) {
+        showErrorMessage("Please enter both the task and deadline.");
+        return;
+    }
+
+    const todoDiv = createTodoDiv(todoText, deadlineText);
+    todoList.appendChild(todoDiv);
+
+    saveLocalTodos(todoText);
+    playCompleteSound();
+    displayRandomQuote();
+
+    todoInput.value = "";
+    deadlineInput.value = "";
+}
+
+function createTodoDiv(todoText, deadlineText) {
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo");
+
     const newTodo = document.createElement("li");
-    newTodo.innerText = todoInput.value;
+    newTodo.innerText = todoText;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-    // ADDING TO LOCAL STORAGE
-    saveLocalTodos(todoInput.value);
 
-    const completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class="fas fa-check-circle"></i>';
-    completedButton.classList.add("complete-btn");
+    const completedButton = createButton('<i class="fas fa-check-circle"></i>', "complete-btn");
+    completedButton.addEventListener("click", toggleTodoCompletion);
     todoDiv.appendChild(completedButton);
 
-    const trashButton = document.createElement("button");
-    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add("trash-btn");
+    const trashButton = createButton('<i class="fas fa-trash"></i>', "trash-btn");
+    trashButton.addEventListener("click", deleteTodo);
     todoDiv.appendChild(trashButton);
 
     const deadlineTime = document.createElement("p");
-    deadlineTime.innerText = formatDeadline(deadlineInput.value);
+    deadlineTime.innerText = formatDeadline(deadlineText);
     deadlineTime.classList.add("deadline-time");
     todoDiv.appendChild(deadlineTime);
 
-    todoList.appendChild(todoDiv);
-    todoInput.value = "";
-    deadlineInput.value = "";
-
-    playCompleteSound();
-    displayRandomQuote();
+    return todoDiv;
 }
 
-function deleteCheck(e) {
-    const item = e.target;
+function createButton(iconHTML, className) {
+    const button = document.createElement("button");
+    button.innerHTML = iconHTML;
+    button.classList.add(className);
+    return button;
+}
 
-    if (item.classList[0] === "trash-btn") {
-        const todo = item.parentElement;
-        todo.classList.add("slide");
+function toggleTodoCompletion(event) {
+    const todo = event.target.parentElement;
+    todo.classList.toggle("completed");
+    playCompleteSound();
+}
 
-        removeLocalTodos(todo);
-        todo.addEventListener("transitionend", function () {
-            todo.remove();
-        });
-    }
+function deleteTodo(event) {
+    const todo = event.target.parentElement;
+    todo.classList.add("slide");
 
-    if (item.classList[0] === "complete-btn") {
-        const todo = item.parentElement;
-        todo.classList.toggle("completed");
-        playCompleteSound();
-    }
+    todo.addEventListener("transitionend", function () {
+        todo.remove();
+        removeLocalTodos(todo.children[0].innerText);
+    });
 }
 
 function filterTodo() {
-    const todos = todoList.childNodes;
+    const todos = Array.from(todoList.childNodes);
+    const filterValue = filterOption.value;
+
     todos.forEach(function (todo) {
-        switch (filterOption.value) {
-            case "all":
-                todo.style.display = "flex";
-                break;
-            case "completed":
-                if (todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
-            case "incomplete":
-                if (!todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
+        if (filterValue === "all" || (filterValue === "completed" && todo.classList.contains("completed")) || (filterValue === "incomplete" && !todo.classList.contains("completed"))) {
+            todo.style.display = "flex";
+        } else {
+            todo.style.display = "none";
         }
     });
 }
 
-function saveLocalTodos(todo) {
-    let todos;
-    if (localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
-}
-
-function getLocalTodos() {
-    let todos;
-    if (localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.forEach(function (todo) {
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
-        const newTodo = document.createElement("li");
-        newTodo.innerText = todo;
-        newTodo.classList.add("todo-item");
-        todoDiv.appendChild(newTodo);
-
-        const completedButton = document.createElement("button");
-        completedButton.innerHTML = '<i class="fas fa-check-circle"></i>';
-        completedButton.classList.add("complete-btn");
-        todoDiv.appendChild(completedButton);
-
-        const trashButton = document.createElement("button");
-        trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-        trashButton.classList.add("trash-btn");
-        todoDiv.appendChild(trashButton);
-
-        const deadlineTime = document.createElement("p");
-        deadlineTime.innerText = formatDeadline(deadlineInput.value);
-        deadlineTime.classList.add("deadline-time");
-        todoDiv.appendChild(deadlineTime);
-
-        todoList.appendChild(todoDiv);
-    });
-}
-
-function removeLocalTodos(todo) {
-    let todos;
-    if (localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-
-    const todoIndex = todo.children[0].innerText;
-    todos.splice(todos.indexOf(todoIndex), 1);
-    localStorage.setItem("todos", JSON.stringify(todos));
+function showErrorMessage(message) {
+    const msg = document.getElementById("msg");
+    msg.innerHTML = message;
+    msg.style.display = "block";
 }
 
 function formatDeadline(deadline) {
     const date = new Date(deadline);
     const options = { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric" };
     return date.toLocaleString("en-US", options);
+}
+
+function saveLocalTodos(todoText) {
+    const todos = getLocalTodos();
+    todos.push(todoText);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function getLocalTodos() {
+    const todos = JSON.parse(localStorage.getItem("todos")) || [];
+    return todos;
+}
+
+function removeLocalTodos(todoText) {
+    const todos = getLocalTodos();
+    const todoIndex = todos.indexOf(todoText);
+    if (todoIndex !== -1) {
+        todos.splice(todoIndex, 1);
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }
 }
 
 function playCompleteSound() {
@@ -172,3 +143,14 @@ function displayRandomQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteElement.textContent = quotes[randomIndex];
 }
+
+// Initialize the page with the saved todos
+function init() {
+    const savedTodos = getLocalTodos();
+    savedTodos.forEach(function (todoText) {
+        const todoDiv = createTodoDiv(todoText, "");
+        todoList.appendChild(todoDiv);
+    });
+}
+
+init();
