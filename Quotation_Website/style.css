@@ -1,0 +1,59 @@
+body {
+    background-image: radial-gradient(circle, #5c0067 0%, #00d4ff 100%);
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(15, 69, 90);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #247789;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: grey;
+  }
+  
+  h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(29, 48, 68);
+  }
+  
+  .quote {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    /* From https://css.glass  */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1.5em auto;
+    padding: 1.2em 1em;
+    text-align: center;
+    border: 2px double black;
+    border-radius: 1em;
+    font-size: 1.8rem;
+    color: rgb(29, 48, 68);
+    max-width: 50%;
+  }
+  
+  @media (max-width:746px) {
+    .quote{
+    max-width: 80%;
+    }
+  
+    h1 {
+      font-size: 3rem;
+    }
+  }
