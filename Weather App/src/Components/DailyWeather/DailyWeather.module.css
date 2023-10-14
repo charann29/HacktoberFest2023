@@ -1,0 +1,38 @@
+.dayweather {
+    display: flex;
+    flex-direction: row;
+}
+
+.perdayweather {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1em;
+    margin: 10px;
+    background: transparent;
+    max-width: 100px;
+    padding: 1.2em;
+}
+
+.temprature {
+    font-size: 2rem;
+}
+
+.weather {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 1200px) {
+    .dayweather {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .perdayweather {
+        flex-direction: row;
+        max-width: 100%;
+        flex-wrap: wrap;
+        gap: 1.2em;
+    }
+}

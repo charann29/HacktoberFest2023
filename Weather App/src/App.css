@@ -1,0 +1,32 @@
+.app {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1.2em;
+    color: hsl(0, 0%, 100%);
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.curr-weather-search-bar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+    padding: .5em 5em;
+}
+
+@media (max-width: 768px) {
+    .curr-weather-search-bar-container {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,11 @@
+.title {
+    font-family: 'Bespoke Stencil', sans-serif;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
