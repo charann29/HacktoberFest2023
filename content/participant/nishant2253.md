@@ -1,0 +1,32 @@
+---
+# NISHANT GUPTA
+
+### Location
+
+NEW DELHI / INDIA
+
+### Academics
+-B.TECH
+-2 YEAR ,ECE UNDERGRADUATE
+### Interests
+
+-FULL STACK WEB DEVELOPMENT
+-WEB3 SPACE
+-COMPETITVE PROGRAMMING
+
+### Development
+
+- FRONTEND DEVELOPMENT
+- BACKEND DEVELOPMEENT
+-BLOCKCHAIN DEVELOPMENT
+
+ 
+### Projects
+
+> TODOIST WEB APP WITH BLOCKCHAIN 
+- [TODOIST]
+>
+### Profile Link
+
+Go to profile [nishant2253](https://github.com/nishant2253/)
+
