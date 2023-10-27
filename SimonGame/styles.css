@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #22456a;
+}
+
+#level-title {
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 4rem;
+  margin:  20px;
+  color: #FEF2BF;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.btn {
+  margin: 20px ;
+  display: block;
+  height: 150px;
+  width: 150px;
+  border: 3px solid black  ;
+  box-shadow: 4px 10px 15px -1px rgb(22, 21, 21);
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.g-btn{
+  width: 130px;
+  height: 60px;
+  margin-top: 30px;
+  font-size: 2rem;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-weight: bolder;
+  text-decoration: solid;
+  border-radius: 20px;
+}
+
+
+.g-btn:hover{
+  background-color: #FEF2BF;
+}
+
+.reload{
+  margin-left: 150px;
+
+}
+
+.Exit{
+  margin-left: 60px;
+}
+
+.icn{
+  color: rgb(0, 0, 0);
+  
+}
+
+.icn:hover{
+  color: rgb(196, 225, 255);
+}
+
+.tags{
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 70px;
+}
+
+p{
+ display: flex;
+ justify-content: center;
+ font-weight: lighter;
+ color: rgb(199, 212, 224);
+ font-family: 'Allerta Stencil', sans-serif;
+
+}
+
+footer{
+  margin-top: 110px;
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 850px) {
+
+
+  #level-title{
+    margin-top: 50px;
+    font-size: 3.5rem;
+  }
+
+  .container{
+
+    margin-top: 80px;
+    width: 100%;
+  }
+
+  .btn{
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+  }
+
+  .g-btn{
+    width: 120px;
+    height: 80px;
+    margin-top: 100px;
+    font-size: 1.5rem;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: bolder;
+  text-decoration: solid;
+  border-radius: 20px;
+
+  }
+  
+footer{
+  margin-top: 150px;
+  margin-bottom: 20px;
+ }
+
+ .Exit{
+  margin-left: 40px;
+}
+  
+}
